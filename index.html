@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sreekutty Santhosh | Data Science Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefcf8;
+      color: #2d2a2e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #1e1a22;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #e4a5b4;
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #3b2e41;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    header {
+      background-color: #fffdf9;
+      border-bottom: 1px solid #f0e5de;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 253, 249, 0.95);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      padding: 1rem 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a3b4e;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #e4a5b4;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin: 3rem 0 4rem 0;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 2;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: #5e4b6e;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: #e4a5b4;
+      color: white;
+      border: 1px solid #e4a5b4;
+    }
+
+    .btn-primary:hover {
+      background-color: #d48c9e;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #c9b6cf;
+      color: #4a3b4e;
+      background-color: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: #f5ede8;
+      border-color: #b094bc;
+    }
+
+    .hero-avatar {
+      flex: 1;
+      text-align: center;
+    }
+
+    .avatar-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      border: 3px solid #e4a5b4;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f2e8e2;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      background: #f0e9f0;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      color: #5a4b6e;
+    }
+
+    .meta-info {
+      font-size: 0.8rem;
+      color: #8b7a8f;
+      margin-top: 0.75rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cert-img, .vol-img, .ach-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 0.8rem 0;
+      border: 1px solid #f0e5de;
+    }
+
+    .view-btn {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: #f0e9f0;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #4a3b4e;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .view-btn:hover {
+      background: #e4a5b4;
+      color: white;
+    }
+
+    .inline-icon {
+      font-size: 1rem;
+      margin-right: 0.25rem;
+      vertical-align: middle;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border: 0;
+      height: 1px;
+      background: #eee5df;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      background: #f9f4f0;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #3e2c46;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .contact-link:hover {
+      background: #e4a5b4;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      color: #8b7a8f;
+      font-size: 0.8rem;
+      border-top: 1px solid #f0e5de;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#volunteering">Volunteering</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Hero Section with Profile Photo -->
+  <div class="hero">
+  <div class="hero-content">
+    <p class="hero-tagline">👋 Hello, I'm</p>
+    <h1>Sreekutty Santhosh</h1>
+    <p class="hero-tagline">MSc Data Science (Bio AI) | Aspiring Data Scientist | Public speaking </p>
+    <p>Passionate about using AI to solve problems in life sciences. Combining analytical rigor with creative communication to drive impact.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">📩 Contact Me</a>
+      <a href="#projects" class="btn btn-outline">🔬 View Projects</a>
+      <a href="#certifications" class="btn btn-outline">📜 Certifications</a>
+    </div>
+  </div>
+  <div class="hero-avatar">
+    <img src="profile.jpeg" alt="Sreekutty Santhosh" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid #e4a5b4; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I am a Master's student in <strong>Data Science with a specialization in Bio AI</strong> at Kerala Digital University. My academic background in Zoology gives me a unique perspective on lifescience. I'm passionate about leveraging machine learning and data-driven approaches to solve real-world challenges in healthcare and life sciences.
+With a naturally curious mindset, I continuously seek to learn, explore, and push boundaries at the intersection of science, data, and creativity.
+
+Driven by curiosity, I'm constantly exploring, learning, and growing—one idea at a time</p>
+      <br>
+      <p>Beyond the lab, I enjoy public speaking, creative arts, and environmental initiatives. I believe the best insights come from blending analytical thinking with human-centered communication.</p>
+      <div class="meta-info">
+        <span>📍 Kochi, India</span>
+        <span>🎓 2025 – 2027 (Expected)</span>
+        <span>✨ Open to work</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Technical & Professional Skills</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>📊 Data Science & AI</h3>
+        <p>Python (Pandas, NumPy), Machine Learning basics, Data Visualization, Deep Learning fundamentals, Network Pharmacology.</p>
+        <span class="skill-badge">Learning</span>
+      </div>
+      <div class="card">
+        <h3>🧬 Bioinformatics</h3>
+        <p>NGS tools, Molecular Docking (Chimera, ClusPro), ADMET analysis, Multi-omics data concepts, Systems Biology.</p>
+        <span class="skill-badge">Intermediate</span>
+      </div>
+      <div class="card">
+        <h3>🎨 Creative & Communication</h3>
+        <p>Public Speaking, Presentation Design, Science Communication, Technical Writing, Community Engagement.</p>
+        <span class="skill-badge">Strong</span>
+      </div>
+     
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Key Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>🧬 Venom to Cure: In Silico Drug Discovery</h3>
+        <p>Investigated anticancer potential of arthropod venom peptides targeting EGFR/KIT receptors for ovarian and testicular cancers. Used Chimera, ClusPro, molecular dynamics, and ADMET prediction tools.</p>
+        <div class="meta-info"><span>📅 Dec 2024 – May 2025</span></div>
+      </div>
+      <div class="card">
+        <h3>🌿 Network Pharmacology in Cardiovascular Disease</h3>
+        <p>Analyzed traditional Ayurvedic plants to identify bioactive compounds and their drug-target interactions using network pharmacology and systems biology approaches.</p>
+        <div class="meta-info"><span>📅 2025-2026</span></div>
+      </div>
+      <div class="card">
+        <h3>🧠 Flexynesis Presentation (Research Review)</h3>
+        <p>Presented a critical review on “Flexynesis: A deep learning toolkit for multi-omics data integration” highlighting its applications in precision oncology.</p>
+        <div class="meta-info"><span>📅 2026</span></div>
+      </div>
+	
+      <div class="card fade-in">
+      <h3>🧠 NGS & Bioinformatics Exploration</h3>
+      <p>
+        Gained exposure to Next Generation Sequencing workflows and bioinformatics tools for analyzing 
+        biological data and understanding complex biological systems.
+      </p>
+    </div>
+
+
+    </div>
+  </section>
+
+  <!-- Certifications Section with Images -->
+  <section id="certifications" class="section">
+    <h2>📜 Certifications & Workshops</h2>
+    
+    <div class="card">
+      <h3>🌱 Environment Management Workshop</h3>
+      <img src="bhoomitrasena.jpg" class="cert-img" alt="Environment Management Certificate" onerror="this.style.display='none'">
+      <p>Participated in a workshop on transforming water hyacinth into eco-friendly products, focusing on sustainable waste utilization and environmental awareness.</p>
+      <div class="meta-info">📅 March 2023</div>
+    </div>
+
+    <div class="card">
+      <h3>🚑 First Aid, CPR & AED Awareness</h3>
+      <img src="skillacademy.jpg" class="cert-img" alt="First Aid Certificate" onerror="this.style.display='none'">
+      <p>Gained foundational knowledge in emergency response, CPR, AED usage, and basic first aid techniques.</p>
+      <div class="meta-info">📅 October 2022</div>
+      <a href="skillacademy.jpg" target="_blank" class="view-btn">📄 View Certificate</a>
+    </div>
+
+    <div class="card">
+      <h3>🦠 Disease Detectives – Flinders University</h3>
+      <img src="disease.jpg" class="cert-img" alt="Disease Detectives Certificate" onerror="this.style.display='none'">
+      <p>Learned basics of epidemiology, outbreak preparedness, and global public health awareness.</p>
+      <div class="meta-info">📅 July 2023</div>
+      <a href="disease.jpg" target="_blank" class="view-btn">📄 View Certificate</a>
+    </div>
+
+    <div class="card">
+      <h3>🧠 Psychological Counselling Course</h3>
+      <img src="counselling.jpg" class="cert-img" alt="Counselling Certificate" onerror="this.style.display='none'">
+      <p>Developed skills in active listening, empathy, emotional intelligence, and mental health awareness.</p>
+      <div class="meta-info">📅 January 2023</div>
+      <a href="counselling.jpg" target="_blank" class="view-btn">📄 View Certificate</a>
+    </div>
+
+    <div class="card">
+      <h3>🤖 ChatGPT Prompting Workshop – IEEE</h3>
+      <img src="ieee.jpg" class="cert-img" alt="IEEE ChatGPT Certificate" onerror="this.style.display='none'">
+      <div class="meta-info">📅 August 2025</div>
+      <a href="ieee.jpg" target="_blank" class="view-btn">📄 View Certificate</a>
+    </div>
+
+    <div class="card">
+      <h3>🎤 Public Speaking Foundations</h3>
+      <img src="publicspeaking.jpg" class="cert-img" alt="Public Speaking Certificate" onerror="this.style.display='none'">
+      <div class="meta-info">📅 May 2025</div>
+      <a href="publicspeaking.jpg" target="_blank" class="view-btn">📄 View Certificate</a>
+    </div>
+  </section>
+
+  <!-- Achievements Section with Images -->
+  <section id="achievements" class="section">
+    <h2>Achievements</h2>
+    
+    <div class="card">
+      <img src="ideathon.jpg" class="ach-img" alt="Ideathon Achievement" onerror="this.style.display='none'">
+      <h3>🏆 Top 30 – Ideathon (Innovation Mela 2025)</h3>
+      <p>Selected among top 30 for pitching “Momentum” — a psychology-based time management app with the concept “Done is Better”.</p>
+    </div>
+
+    <div class="card">
+      <img src="nep.jpg" class="ach-img" alt="Poster Making Competition" onerror="this.style.display='none'">
+      <h3>🥇 1st Prize – Poster Making Competition</h3>
+      <p>Secured first place in NEP 2020 “Imagine, Illustrate, Inspire” competition for creative expression on multilingual education.</p>
+    </div>
+
+    <div class="card">
+      <img src="jam.jpg" class="ach-img" alt="JAM Competition" onerror="this.style.display='none'">
+      <h3>🎤 2nd Prize – JAM Competition</h3>
+      <p>Won second prize in “Spit It Out” JAM competition, showcasing spontaneous speaking skills.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌱 Community & Environmental Work</h3>
+      <p>Participated in sustainability initiatives, teaching, awareness programs, and outreach activities.</p>
+    </div>
+  </section>
+
+  <!-- Volunteering Section with Images -->
+  <section id="volunteering" class="section">
+    <h2>Volunteering & Activities</h2>
+
+    <div class="card">
+      <h3>📚 Volunteer Teacher – U&I Trust</h3>
+      <img src="u&i.jpg" class="vol-img" alt="U&I Trust Volunteering" onerror="this.style.display='none'">
+      <p>Taught and supported students through educational initiatives, contributing to learning and community development.</p>
+      <div class="meta-info">📅 Jun 2023 – Mar 2024</div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 Environmental Internship – Bring Back Green Foundation</h3>
+      <img src="bbg.jpg" class="vol-img" alt="Bring Back Green Foundation" onerror="this.style.display='none'">
+      <p>Completed a 50-day field internship under the Navakeralam campaign, working on waste management, sustainability awareness, and community initiatives.</p>
+      <a href="bbg.jpg" target="_blank" class="view-btn">📄 View Certificate</a>
+    </div>
+
+    <div class="card">
+      <h3>🎤 NSS Project Presentation – SH Vision</h3>
+      <p>Presented the “Hrudyaramam” initiative, promoting educational support for students and engaging the community through effective communication.</p>
+      <a href="https://www.instagram.com/shvision_shcthevara/reel/C66HDpAPQky/" target="_blank" class="view-btn">🎥 View Reel on Instagram</a>
+    </div>
+
+    <div class="card">
+      <h3>🌊 G20 Beach Cleanup Volunteer</h3>
+      <img src="G2O.jpg" class="vol-img" alt="G2O Beach Cleanup" onerror="this.style.display='none'">
+      <p>Participated in environmental conservation efforts at Fort Kochi as part of Mission LiFE, promoting sustainable practices.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌿 Nature Camp – Periyar Tiger Reserve</h3>
+      <img src="Nature camp.jpg" class="vol-img" alt="Nature camp" onerror="this.style.display='none'">
+      <p>Gained exposure to wildlife conservation, biodiversity, and ecosystem sustainability through field-based learning experiences.</p>
+    </div>
+
+    <div class="card">
+      <h3>👩‍🎓 Women Empowerment Conclave</h3>
+      <img src="conclave.jpg" class="vol-img" alt="Women Empowerment Conclave" onerror="this.style.display='none'">
+      <p>Participated in leadership and personal development sessions focused on confidence building, communication, and social awareness.</p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>MSc Data Science (Bio AI Specialization)</h3>
+      <p>Kerala Digital University, Thiruvananthapuram · 2025 – 2027</p>
+      <p>Core focus: Bioinformatics, Machine Learning, AI in Life Sciences, Computational Biology.</p>
+    </div>
+    <div class="card">
+      <h3>BSc Zoology</h3>
+      <p>Sacred Heart College, Thevara · 2022 – 2025</p>
+      <p>Foundation in biological systems, research methodologies, and life sciences.</p>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="section">
+    <h2>Leadership & Involvement</h2>
+    <div class="card">
+      <h3>🏫 Deputy Head Girl (School)</h3>
+      <p>Served as Deputy Head Girl, taking responsibility for student coordination, leadership activities, and representing student voices in school initiatives.</p>
+    </div>
+    <div class="card">
+      <h3>Age-Friendly Club Member (College)</h3>
+      <p>Actively participated in creative and community-oriented activities, promoting engagement through art and social interaction for the elderly community.</p>
+    </div>
+    <div class="card">
+      <h3>🧪 Bhoomitra Sena Club Member</h3>
+      <p>Involved in environmental awareness activities and sustainability initiatives, contributing to eco-friendly practices and conservation efforts.</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Core Member – Social Engagement Centre</h3>
+      <p>Part of the core team working on community engagement initiatives, organizing activities, and contributing to social impact programs at Digital University Kerala.</p>
+    </div>
+    <div class="card">
+      <h3>📢 NEP Saarthi Volunteer</h3>
+      <p>Contributing to initiatives that promote the National Education Policy (NEP), participating in awareness programs, and student engagement activities.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Let’s Connect</h2>
+    <div class="card" style="text-align: center;">
+      <p style="margin-bottom: 1.5rem;">I’m open to research collaborations, internships, and entry-level opportunities in data science, bioinformatics, and AI-driven health tech.</p>
+      <div class="contact-links">
+        <a href="mailto:sreekuttysanthosh30@gmail.com" class="contact-link">📧 Email</a>
+        <a href="https://www.linkedin.com/in/sreekuttysanthosh/" class="contact-link" target="_blank">💼 LinkedIn</a>
+        <a href="https://github.com/sreekuttysanthosh" class="contact-link" target="_blank">🐙 GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2025 Sreekutty Santhosh · Built with care for data & creativity
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
