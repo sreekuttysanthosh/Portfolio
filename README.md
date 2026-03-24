@@ -24,7 +24,7 @@ I'm a Master's student in **Data Science with Bio AI specialization** at Kerala 
 - 🐙 GitHub: [sreekuttysanthosh](https://github.com/sreekuttysanthosh)
 
 ## Live Website
-🔗 [View my portfolio here](https://[your-username].github.io/[repository-name]/)
+🔗 [View my portfolio here](https://sreekuttysanthosh.github.io/Portfolio//)
 
 ---
 
