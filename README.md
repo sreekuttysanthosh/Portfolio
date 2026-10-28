@@ -21,8 +21,8 @@ Welcome to my personal portfolio repository! This website showcases my academic 
 
 * **Languages & Scripting:** Python (OOP, Data Processing)
 * **Machine Learning & AI:** Scikit-Learn, Graph Neural Networks (GNNs), Model Interpretability (SHAP), PyTorch / PyG
-* **Bio-AI & Multi-Omics:** BioPython, RDKit, PubMed Entrez API, NGS Data Pipelines
-* **Generative AI & Web Tooling:** Google Gemini API, Streamlit, HTML5, Tailwind CSS
+* **Bio-AI & Multi-Omics:** BioPython, RDKit, PubMed Entrez API, NGS Data Pipelines ,Docking
+* **Generative AI & Web Tooling:** Google Gemini API, Streamlit, HTML5, 
 * **Version Control & Tools:** Git, GitHub, VS Code
 
 ---
